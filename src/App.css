@@ -1,0 +1,32 @@
+body {
+  font-family: 'Shippori Mincho B1', serif;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.nav-link {
+  color: black !important;
+  font-size: 18px;
+  font-family: 'Shippori Mincho B1', serif;
+  text-shadow: 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black, -1px 0 0 black;
+}
+
+.nav-item {
+  margin: 0 .75rem;
+}
+
+#splash {
+  background-image: url("/src/styles/images/firecloseup.jpg");
+  background-size: cover;
+  height: 82.5vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

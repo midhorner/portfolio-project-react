@@ -1,0 +1,21 @@
+.close-icon {
+  color: black !important;
+}
+
+.navbar {
+  background-image: url("/src/styles/images/woodtex2.jpg");
+  background-size: cover;
+}
+
+.navbar-toggler {
+  border: solid black 2px !important;
+}
+
+.toggler-bar {
+  display: block;
+  width: 27px;
+  height: 2px;
+  margin: .35rem 0; 
+  background: black;
+  border-radius: 3px;
+}
