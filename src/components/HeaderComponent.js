@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavbarBrand, Collapse, NavItem } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, Collapse, NavItem, Modal, ModalHeader } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import Reservations from './ReservationsComponent';
+import Events from './EventsComponent';
 import '../styles/HeaderComponent.css';
 
 class Header extends Component {
@@ -8,8 +10,22 @@ class Header extends Component {
     super(props);
     this.state = {
       isNavOpen: false,
-      showX: false
+      showX: false,
+      isModalOpen1: false,
+      isModalOpen2: false
     };
+  }
+
+  toggleModal1 = () => {
+    this.setState({
+      isModalOpen1: !this.state.isModalOpen1
+    });
+  }
+
+  toggleModal2 = () => {
+    this.setState({
+      isModalOpen2: !this.state.isModalOpen2
+    });
   }
 
   toggleNav = () => {
@@ -21,6 +37,7 @@ class Header extends Component {
 
   render() {
     return(
+      <>
 
       <Navbar light sticky="top" expand="lg" className="py-0">
         <NavbarBrand className="mr-auto" href="/"><img src="/assets/images/smokelogo.png" height="100" width="auto" alt="Smoke Logo"/></NavbarBrand>
@@ -33,27 +50,26 @@ class Header extends Component {
           <div className={`close-icon py-1 ${!this.state.showX ? 'hide' : 'show'}`}>&#10006;</div>
         </button>
         <Collapse isOpen={this.state.isNavOpen} navbar>
-          <Nav navbar className="ml-auto text-center">
-            
+          <Nav navbar className="ml-auto text-center">            
             <NavItem>
               <NavLink className="nav-link" to='/about'>
                 About
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="nav-link" to='/features'>
-                Features
+              <NavLink className="nav-link" to='/menu'>
+                Menu
               </NavLink>
             </NavItem>
               <NavItem>
-              <NavLink className="nav-link" to='/reservations'>
+              <NavLink className="nav-link" to='/reservations' onClick={this.toggleModal1}>
                 Reservations
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="nav-link" to='/events'>
+              <NavLink className="nav-link" to='/events' onClick={this.toggleModal2}>
                 Events
-              </NavLink>
+              </NavLink>              
             </NavItem>
             <NavItem>
               <NavLink className="nav-link" to='/merch'>
@@ -64,11 +80,21 @@ class Header extends Component {
               <NavLink className="nav-link" to='/orderonline'>
                 Order Online
               </NavLink>
-            </NavItem>
-            
+            </NavItem>            
           </Nav>
         </Collapse>
-      </Navbar>  
+      </Navbar>
+
+      <Modal isOpen={this.state.isModalOpen1} toggle={this.toggleModal1}>
+        <ModalHeader toggle={this.toggleModal1}>Make a Reservation</ModalHeader>
+        <Reservations />
+      </Modal>
+      <Modal isOpen={this.state.isModalOpen2} toggle={this.toggleModal2}>
+        <ModalHeader toggle={this.toggleModal2}>Events</ModalHeader>
+        <Events />
+      </Modal>
+
+    </>
 
     );
   }
