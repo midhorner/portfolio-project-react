@@ -42,7 +42,7 @@ class Footer extends Component {
                 <Contact />
               </Modal>
               <Link className="nav-link d-inline" id="careersLink" onClick={this.toggleModal2}>Careers</Link>
-              <Modal isOpen={this.state.isModalOpen2} toggle={this.toggleModal2} className="modal-dialog-centered">
+              <Modal isOpen={this.state.isModalOpen2} toggle={this.toggleModal2} className="modal-dialog-centered modal-lg">
                 <ModalHeader toggle={this.toggleModal2}>Join The Team</ModalHeader>
                 <Careers />               
               </Modal>

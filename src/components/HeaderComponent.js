@@ -11,20 +11,13 @@ class Header extends Component {
     this.state = {
       isNavOpen: false,
       showX: false,
-      isModalOpen1: false,
-      isModalOpen2: false
+      isModalOpen1: false
     };
   }
 
   toggleModal1 = () => {
     this.setState({
       isModalOpen1: !this.state.isModalOpen1
-    });
-  }
-
-  toggleModal2 = () => {
-    this.setState({
-      isModalOpen2: !this.state.isModalOpen2
     });
   }
 
@@ -67,7 +60,7 @@ class Header extends Component {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="nav-link" to='/events' onClick={this.toggleModal2}>
+              <NavLink className="nav-link" to='/events'>
                 Events
               </NavLink>              
             </NavItem>

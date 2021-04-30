@@ -6,6 +6,7 @@ import Home from './HomeComponent';
 import Location from "./LocationComponent";
 import Menu from './MenuComponent';
 import About from './AboutComponent';
+import Events from './EventsComponent';
 import { MERCH } from './shared/merch';
 import { FOOD } from './shared/menu';
 import { COCKTAILS } from './shared/cocktails';
@@ -28,6 +29,7 @@ class Main extends Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/location" component={Location} />
           <Route exact path="/menu" render={() => <Menu food={this.state.food} cocktails={this.state.cocktails} /> }/>
+          <Route exact path="/events" component={Events} />
           <Redirect to="/home" />
         </Switch>
         <Footer />

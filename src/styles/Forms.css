@@ -1,3 +1,19 @@
+.btn-submit {
+  border: solid black !important;
+  color: black !important;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  min-width: 10rem;
+}
+
+.btn-submit:active {
+  transform: scale(.98);
+}
+
+.btn-submit:hover {
+  background-color: black;
+  color: whitesmoke !important;
+}
+
 .form-control:focus, 
 .form-control:active:focus,
 .form-control.active:focus {
@@ -6,8 +22,13 @@
   box-shadow: none !important;
 }
 
-.form-group:focus-within label {
+.form-group:focus-within small {
   opacity: 1;
+}
+
+small {
+  opacity: 0;
+  pointer-events: none;
 }
 
 input, select {
@@ -15,14 +36,11 @@ input, select {
 }
 
 label {
-  opacity: 0;
-  pointer-events: none;
   color: black !important;
   text-shadow: 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black, -1px 0 0 black;
 }
 
 .modal-content {
-  border: solid black 2px !important;
   background-image: url("/src/styles/images/woodtex2.jpg");
   background-size: cover;
 }
@@ -31,4 +49,8 @@ label {
   border-bottom: solid black 2px !important;
   color: black !important;
   text-shadow: 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black, -1px 0 0 black;
+}
+
+select {
+  padding-top: .15rem !important;
 }

@@ -15,9 +15,10 @@ function RenderFood({food}) {
           <div className="col text-left">
             <CardBody className="py-0">
               <CardTitle className="mb-0" tag="h5">{food.name}</CardTitle>
-              <CardText className="mb-0" tag="small">{food.description}</CardText>
-              <br/>
-              <CardText tag="strong">${food.cost}</CardText>
+              <CardText className="mb-0 description" tag="div">{food.description}
+                <br/>
+                ${food.cost}
+              </CardText>
             </CardBody>
           </div>
         </div>
@@ -38,7 +39,7 @@ function RenderCocktails({cocktail}) {
           <div className="col text-left">
             <CardBody className="py-0">
               <CardTitle className="mb-0" tag="h5">{cocktail.name}</CardTitle>
-              <CardText className="mb-0" tag="small">{cocktail.description}</CardText>
+              <CardText className="mb-0 description" tag="div">{cocktail.description}</CardText>
               <br/>
               <CardText tag="strong">${cocktail.cost}</CardText>
             </CardBody>
